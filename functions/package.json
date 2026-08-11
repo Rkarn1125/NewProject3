@@ -1,0 +1,14 @@
+{
+  "name": "faceup-x-functions",
+  "description": "FaceUp X AI Aesthetic Lab Cloud Functions",
+  "type": "module",
+  "main": "index.mjs",
+  "engines": {
+    "node": "20"
+  },
+  "dependencies": {
+    "firebase-admin": "^13.0.0",
+    "firebase-functions": "^6.3.0",
+    "@google/genai": "^2.16.0"
+  }
+}

@@ -1,0 +1,27 @@
+rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+    
+    // User Profile Document and Nested Subcollections (/users/{userId}/...)
+    // Only the logged-in user whose auth.uid matches {userId} can read/write their user document & nested subcollections.
+    match /users/{userId} {
+      allow read: if request.auth != null && request.auth.uid == userId;
+      allow create: if request.auth != null && request.auth.uid == userId;
+      allow update: if request.auth != null && request.auth.uid == userId
+                    && !('role' in request.resource.data && request.resource.data.role != resource.data.role);
+      allow delete: if false; // Profiles are preserved
+      
+      match /{allPaths=**} {
+        allow read, write: if request.auth != null && request.auth.uid == userId;
+      }
+    }
+
+    // Default Fallback: Block all other unauthorized access
+    match /{document=**} {
+      allow read, write: if false;
+    }
+    
+  }
+}
+

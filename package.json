@@ -1,0 +1,25 @@
+{
+  "name": "faceup-x-ai-aesthetic-lab",
+  "version": "1.0.0",
+  "description": "AI Facial Analysis & Feature Scoring Web Application using MediaPipe 468 3D Landmarks",
+  "type": "module",
+  "main": "server.mjs",
+  "scripts": {
+    "start": "node server.mjs",
+    "dev": "node server.mjs",
+    "test": "node --test test/*.test.mjs"
+  },
+  "keywords": [
+    "mediapipe",
+    "face-mesh",
+    "facial-analysis",
+    "golden-ratio",
+    "ai"
+  ],
+  "author": "Antigravity",
+  "license": "MIT",
+  "dependencies": {
+    "@google/genai": "^2.16.0",
+    "dotenv": "^17.4.2"
+  }
+}

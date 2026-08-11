@@ -1,0 +1,28 @@
+# Dependencies
+node_modules/
+
+# Environment variables (contains API keys)
+.env
+
+# macOS
+.DS_Store
+
+# User data (generated at runtime)
+data/
+assets/avatars/
+
+# Firebase
+.firebase/
+public/
+public_test/
+
+# Cloud Functions build artifacts
+functions/node_modules/
+
+# IDE
+.vscode/
+.idea/
+
+# Logs
+*.log
+npm-debug.log*
