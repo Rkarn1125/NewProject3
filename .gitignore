@@ -26,3 +26,4 @@ functions/node_modules/
 # Logs
 *.log
 npm-debug.log*
+node_modules
